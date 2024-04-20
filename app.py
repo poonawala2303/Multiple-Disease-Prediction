@@ -2,6 +2,7 @@ import os
 import joblib
 import streamlit as st
 from streamlit_option_menu import option_menu
+import gdown
 
 # Set page configuration
 st.set_page_config(page_title="Health Assistant",
@@ -14,11 +15,17 @@ working_dir = os.path.dirname(os.path.abspath(__file__))
 
 # loading the saved models
 
-diabetes_model = joblib.load(f"D:\MUSTAFA'S FOLDER\SEM 6 2024\TY OOSE 2024\MINI PROJECT\diabetes_model.sav")
+diabetes_model_file_id = "1cnVbmTYaCnmxHRJ-pKjwv0iwHvlbd-Jy"
+gdown.download(f"https://drive.google.com/file/d/1cnVbmTYaCnmxHRJ-pKjwv0iwHvlbd-Jy/view?usp=sharing", "diabetes_model.sav", quiet=False)
+diabetes_model = joblib.load("diabetes_model.sav")
 
-heart_disease_model = joblib.load(f"D:\MUSTAFA'S FOLDER\SEM 6 2024\TY OOSE 2024\MINI PROJECT\heart_disease_model.sav")
+heart_disease_model_file_id = "1MqKregS3nDGsLYuLhe3oow-Il_c6lTJn"
+gdown.download(f"https://drive.google.com/file/d/1MqKregS3nDGsLYuLhe3oow-Il_c6lTJn/view?usp=sharing", "heart_disease_model.sav", quiet=False)
+heart_disease_model = joblib.load("heart_disease_model.sav")
 
-parkinsons_model = joblib.load(f"D:\MUSTAFA'S FOLDER\SEM 6 2024\TY OOSE 2024\MINI PROJECT\parkinsons_model.sav")
+parkinsons_model_file_id = "1k9AhoHNNIzbyGqmoZ7ZOGKTybXkC8Civ"
+gdown.download(f"https://drive.google.com/file/d/1k9AhoHNNIzbyGqmoZ7ZOGKTybXkC8Civ/view?usp=sharing", "parkinsons_model.sav", quiet=False)
+parkinsons_model = joblib.load("parkinsons_model.sav")
 
 # sidebar for navigation
 with st.sidebar:
